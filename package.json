@@ -1,0 +1,27 @@
+{
+  "name": "parking.ms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-ssilva/parking.ms.git"
+  },
+  "author": "m-ssilva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m-ssilva/parking.ms/issues"
+  },
+  "homepage": "https://github.com/m-ssilva/parking.ms#readme",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "lodash": "^4.17.11",
+    "sequelize": "^4.42.0"
+  }
+}
