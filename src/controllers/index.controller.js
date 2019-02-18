@@ -3,3 +3,9 @@ exports.get = (ctx) => {
         message: 'Hello World'
     }
 }
+
+exports.post = (ctx) => {
+    ctx.body = {
+        message: 'Teste'
+    }
+}
