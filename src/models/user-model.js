@@ -1,24 +1,27 @@
-const sequelize = require('sequelize')
+const sequelize = require('../helpers/mysql-connect')
+const seq = require('sequelize')
 
 const User = sequelize.define('user', {
     id: {
-        type: sequelize.INTEGER,
+        type: seq.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
     name: {
-        type: sequelize.STRING,
+        type: seq.STRING,
         allowNull: false
     },
     username: {
-        type: sequelize.STRING,
+        type: seq.STRING,
         allowNull: false,
         unique: true
     },
     password: {
-        type: sequelize.STRING,
+        type: seq.STRING,
         allowNull: false
     }
 })
+
+User.sync({ force: true })
 
 module.exports = User
