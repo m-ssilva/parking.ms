@@ -1,3 +1,5 @@
+const userModel = require('../models/user-model')
+
 exports.get = (ctx) => {
     ctx.body = {
         message: 'Hello World'
@@ -5,7 +7,5 @@ exports.get = (ctx) => {
 }
 
 exports.post = (ctx) => {
-    ctx.body = {
-        message: 'Teste'
-    }
+    userModel.create(ctx.request.body)
 }
