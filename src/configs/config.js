@@ -7,7 +7,7 @@ module.exports = {
         host: process.env.SQL_HOST || 'localhost',
         database: process.env.SQL_DB || 'parking',
         user: process.env.SQL_USER || 'root',
-        password: process.env.SQL_PWD || null,
+        password: process.env.SQL_PWD || 'root',
         dialect: process.env.SQL_DIALECT || 'mysql'
     }
 }
