@@ -1,5 +1,6 @@
 const sequelize = require('../helpers/mysql-connect')
 const seq = require('sequelize')
+const bcrypt = require('bcrypt')
 
 const User = sequelize.define('user', {
     id: {
@@ -20,7 +21,19 @@ const User = sequelize.define('user', {
         type: seq.STRING,
         allowNull: false
     }
-})
+}, {
+        hooks: {
+            beforeCreate: (user) => {
+                const salt = bcrypt.genSaltSync()
+                user.password = bcrypt.hashSync(user.password, salt)
+            }
+        },
+        instanceMethods: {
+            comparePassword: (password) => {
+                return bcrypt.compareSync(password, this.password)
+            }
+        }
+    })
 
 User.sync({ force: false })
 
