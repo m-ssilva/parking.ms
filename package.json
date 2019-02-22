@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/m-ssilva/parking.ms#readme",
   "dependencies": {
+    "bcrypt": "^3.0.4",
     "filter-files": "^0.4.0",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
