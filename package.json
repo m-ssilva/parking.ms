@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./src/server.js",
     "dev": "nodemon ./src/server.js",
-    "test": "mocha ./src/tests/**/*test.js --reporter spec"
+    "test": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,8 @@
   },
   "devDependencies": {
     "http": "0.0.0",
-    "mocha": "^5.2.0",
+    "istanbul": "^0.4.5",
+    "jest": "^24.5.0",
     "nodemon": "^1.18.10",
     "supertest": "^3.4.2"
   }
