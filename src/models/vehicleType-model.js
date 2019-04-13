@@ -1,19 +1,27 @@
 const sequelize = require('../helpers/mysql-connect')
-const seq = require('sequelize')
-const VehicleModel = require('./vehicle-model')
+const { INTEGER, STRING } = require('sequelize')
 
 const VehicleType = sequelize.define('vehicleType', {
     id: {
-        type: seq.INTEGER,
+        type: INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
     type: {
-        type: seq.STRING,
+        type: STRING,
         allowNull: false
     }
 })
 
-VehicleType.belongsTo(VehicleModel, { through: type, foreignKey: "id" })
+VehicleType.sync({ force: true })
+
+VehicleType.sync().then(() => {
+    VehicleType.create({
+        type: 'Carro'
+    })
+    VehicleType.create({
+        type: 'Moto'
+    })
+})
 
 module.exports = VehicleType

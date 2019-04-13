@@ -6,7 +6,7 @@ exports.post = (ctx) => {
 }
 
 exports.searchUser = async (body) => {
-    const result = await userModel.find({
+    const result = await userModel.findOne({
         where: {
             username: body.username
         }

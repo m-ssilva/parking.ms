@@ -7,4 +7,9 @@ module.exports = [{
     path: url,
     action: controller.post,
     middleware: [validator.post]
+},
+{
+    method: 'get',
+    path: `${url}/types`,
+    action: controller.getTypes
 }]

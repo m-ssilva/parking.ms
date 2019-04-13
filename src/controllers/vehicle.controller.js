@@ -1,4 +1,5 @@
 const vehicleModel = require('../models/vehicle-model')
+const vehicleType = require('../models/vehicleType-model')
 
 exports.post = (ctx) => {
     vehicleModel.create(ctx.request.body)
@@ -13,4 +14,11 @@ exports.plateValidator = async (body) => {
     })
     if (result.length > 0) return true
     else return false
+}
+
+exports.getTypes = async (ctx) => {
+    const result = await vehicleType.findAll({})
+    ctx.body = {
+        result
+    }
 }
