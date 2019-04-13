@@ -1,21 +1,26 @@
 const sequelize = require('../helpers/mysql-connect')
-const seq = require('sequelize')
+const { INTEGER, STRING } = require('sequelize')
 
 const Vehicle = sequelize.define('vehicle', {
     id: {
-        type: seq.INTEGER,
+        type: INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
     type: {
-        type: seq.INTEGER
+        type: INTEGER,
+        references: {
+            model: 'vehicleType',
+            key: 'id'
+        },
+        allowNull: false
     },
     model: {
-        type: seq.STRING,
+        type: STRING,
         allowNull: false
     },
     plate: {
-        type: seq.STRING,
+        type: STRING,
         unique: true,
         allowNull: false
     }
