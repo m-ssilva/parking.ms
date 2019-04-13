@@ -11,21 +11,16 @@ exports.searchUser = async (body) => {
             username: body.username
         }
     }).then((user) => {
-        console.log(user)
-        if (!user) {
-            return false // username not found.
-        }
+        /* username not found */
+        if (!user) return false
 
-        else if (!user.comparePassword(body.password)) {
-            return false // not matching password.
-        }
+        /* not matching password */
+        else if (!user.comparePassword(body.password)) return false
 
-        else {
-            return true // correct username and password.
-        }
+        /* correct username and password */
+        else return true
     })
 
-    console.log(`########### ${result}`)
     if (result === null) return false
     if (result) return true
     else return false

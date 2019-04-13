@@ -4,7 +4,6 @@ const validatePost = async (body) => {
     const errors = []
 
     const userExists = await controller.searchUser(body)
-    console.log(`%%%%%%%%%% ${userExists}`)
 
     if (!body.username) { errors.push({ message: 'Please enter a valid username.', path: 'body.username' }) }
     if (!body.password) { errors.push({ message: 'Please enter a valid password.', path: 'body.password' }) }
