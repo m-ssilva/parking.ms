@@ -11,7 +11,7 @@ afterAll(() => {
 })
 
 describe('test on /api', () => {
-    test('GET on /api', async () => {
+    it('GET on /api', async () => {
         const response = await request(server).get('/api')
         expect(response.status).toEqual(200)
         expect(response.text).toContain('Hello World')
