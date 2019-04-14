@@ -3,9 +3,7 @@ const vehicleType = require('../models/vehicleType-model')
 
 exports.post = (ctx) => {
     vehicleModel.create(ctx.request.body)
-    ctx.body = {
-        message: 'Vehicle created'
-    }
+    ctx.body = { message: 'Vehicle created' }
 }
 
 exports.plateValidator = async (body) => {
@@ -17,8 +15,6 @@ exports.plateValidator = async (body) => {
 }
 
 exports.getTypes = async (ctx) => {
-    const result = await vehicleType.findAll({})
-    ctx.body = {
-        result
-    }
+    const result = await vehicleType.findAll()
+    ctx.body = result
 }
