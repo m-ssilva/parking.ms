@@ -1,4 +1,4 @@
-const userModel = require('../models/user-model')
+const userModel = require('../models/user.model')
 
 exports.post = (ctx) => {
     ctx.body = { message: 'Seja bem vindo!' }

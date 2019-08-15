@@ -1,5 +1,5 @@
-const vehicleModel = require('../models/vehicle-model')
-const vehicleType = require('../models/vehicleType-model')
+const vehicleModel = require('../models/vehicle.model')
+const vehicleType = require('../models/vehicleType.model')
 
 exports.post = (ctx) => {
     vehicleModel.create(ctx.request.body)
